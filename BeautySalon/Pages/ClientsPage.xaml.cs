@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
+using BeautySalon.Pages;
 
 namespace BeautySalon
 {
@@ -193,6 +194,14 @@ namespace BeautySalon
             application.Visible = true;
             document.SaveAs2(@"Клиенты_Azalea.docx");
             document.SaveAs2(@"Клиенты_Azalea.pdf", Word.WdExportFormat.wdExportFormatPDF);
+        }
+
+        private void btnMoreClient_Click(object sender, RoutedEventArgs e)
+        {
+            
+          
+            MoreInfoClientWindow window = new MoreInfoClientWindow((sender as Button).DataContext as Client);
+            window.ShowDialog();
         }
     }
 }
