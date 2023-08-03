@@ -1,0 +1,35 @@
+﻿<Window x:Class="BeautySalon.Pages.MoreInfoClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon.Pages"
+        mc:Ignorable="d"
+        Title="MoreInfoClientWindow" Height="550" Width="900">
+    <Grid Background="#387048">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="ФИО: " Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+        <TextBlock Name="txtFIO" Grid.Column="1" Text="{Binding FullName}" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+
+        <TextBlock Text="Почта: " Grid.Row="1" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25" ></TextBlock>
+        <TextBlock Name="txtEmail"   Grid.Column="1"  Grid.Row="1" Text="{Binding Email}" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+
+        <TextBlock Text="Номер телефона: " Grid.Row="2" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+        <TextBlock Name="txtPhone"  Grid.Column="1"   Grid.Row="2" Text="{Binding Phone}" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+
+        <TextBlock Text="Адрес: " Grid.Row="3" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"> </TextBlock>
+        <TextBlock Name="txtAddress" Grid.Column="1"  Grid.Row="3" Text="{Binding Address}" Style="{StaticResource TextBlockAutoriz}" Foreground="White" FontSize="25"></TextBlock>
+    </Grid>
+</Window>

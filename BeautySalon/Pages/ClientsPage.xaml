@@ -32,15 +32,23 @@
                 <TextBox  BorderBrush="#3F5A47" Margin="10 0" Foreground="#387048" Width="200" Height="30" Name="tbClientsSearch" TextChanged="tbClientsSearch_TextChanged" ></TextBox>
             </ToolBar>
         </Grid>
-
+        <Button Grid.Row="1" Style="{StaticResource BtnActions}" Background="#5EBD79"  Height="55" Width="290" Content="Провести ABC-анализ">  </Button>
 
         <GroupBox Header="Клиенты" FontSize="20" Padding=" 5 10 5 5" Height="570" Width="1020" Grid.Row="2" >
             <DataGrid  Name="dGridClients" AutoGenerateColumns="False" IsReadOnly="True" RowHeaderWidth="0"  RowBackground="#C2F2D0" AlternatingRowBackground="#fff" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}" Width="*"/>
-                    <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="125"/>
-                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="225"/>
+                    <!--<DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="125"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="225"/>-->
                     <DataGridTextColumn Header="Почта" Binding="{Binding Email}" Width="*"/>
+                    <DataGridTemplateColumn Width="190">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnMoreClient" Style="{StaticResource BtnActions}" Content="Подробнее" Background="#5EBD79"  Height="45" Width="150" Click="btnMoreClient_Click"  ></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+               
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
