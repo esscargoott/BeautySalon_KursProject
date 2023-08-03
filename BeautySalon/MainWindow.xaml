@@ -1,0 +1,55 @@
+﻿<Window x:Class="BeautySalon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon"
+        mc:Ignorable="d"
+        Title="Салон красоты Azalea" Height="780" Width="1310"
+        WindowStartupLocation="CenterScreen"   MinHeight="750" MinWidth="1300"
+        Icon="icon.ico" 
+       >
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid  Grid.Column="0" Background="#3F5A47" ></Grid>
+        <Grid  Grid.Column="1" Background="#387048"></Grid>
+        <StackPanel>
+            <Image Source="/Resources/logo.png" VerticalAlignment="Top" HorizontalAlignment="Center" Height="170" Margin="0 10 0  0" />
+            <TextBlock HorizontalAlignment="Center" Foreground="#C2F2D0" Text="Azalea" FontSize="40"  FontFamily="Yu Gothic Light"/>
+
+        </StackPanel>
+        <Frame Grid.Column="1"  x:Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" ></Frame>
+
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBlock Name="btnClients" HorizontalAlignment="Center" Margin="0 9 0 9"  > <Run/>
+                <Hyperlink Style="{StaticResource HypperMain}" Name="hypClients" Click="hypClients_Click"  >Клиенты</Hyperlink>
+            </TextBlock>
+            <TextBlock  Name="btnMasters" HorizontalAlignment="Center"   Margin="0 9 0 9"     >  <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypMasters" Click="hypMasters_Click"  >Мастера</Hyperlink>
+            </TextBlock>
+            <TextBlock   Name="btnServices" HorizontalAlignment="Center"  Margin="0 9 0 9"    > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypServices" Click="hypServices_Click"   >Услуги</Hyperlink>
+            </TextBlock>
+            <TextBlock   Name="btnSchedule" HorizontalAlignment="Center"    Margin="0 9 0 9"   > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}"  Name="hypSchedule" Click="hypSchedule_Click"  >Расписание</Hyperlink>
+            </TextBlock>
+            <TextBlock  Name="btnStatistic"  HorizontalAlignment="Center"  Margin="0 9 0 9" > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypStatistic" Click="hypStatistic_Click"  >Статистика</Hyperlink>
+            </TextBlock>
+            <TextBlock  Name="btnHistory" HorizontalAlignment="Center"  Margin="0 10 0 9"    > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypHistory" Click="hypHistory_Click">История входа</Hyperlink>
+            </TextBlock>
+            <TextBlock  Name="btnBack" HorizontalAlignment="Center"   Margin="0 60 0 10"   > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypBack" Click="hypBack_Click"  >Назад</Hyperlink>
+            </TextBlock>
+            <TextBlock  Name="btnExit" HorizontalAlignment="Center" Margin="0 5"  > <Run/>
+                 <Hyperlink Style="{StaticResource HypperMain}" Name="hypExit" Click="hypExit_Click"  >Выход</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

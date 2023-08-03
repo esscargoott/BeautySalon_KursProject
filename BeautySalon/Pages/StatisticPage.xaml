@@ -1,0 +1,134 @@
+﻿<Page x:Class="BeautySalon.StatisticPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BeautySalon"
+      xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
+      xmlns:charts ="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+      mc:Ignorable="d" 
+     d:DesignHeight="760" d:DesignWidth="1090"
+      Title="StatisticPage">
+
+    <Grid>
+        <TabControl Margin="10" Background="#387048">
+            <TabItem Style="{StaticResource TabItems}">
+                <TabItem.Header  >Популярность услуг</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Выбор типа диаграмм:" Foreground="#fff" Width="200" Margin="0 10 0 5" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton  x:Name="ColumnRadio" Content="Колонны" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio" IsChecked="True" Click="ChartType_Click" ></RadioButton>
+                                <RadioButton  x:Name="BarRadio" Content="Гистограмма" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio" Click="ChartType_Click"></RadioButton>
+                                <RadioButton  x:Name="PieRadio" Content="Круговая" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio" Click="ChartType_Click"></RadioButton>
+                                <RadioButton  x:Name="LineRadio" Content="Линии" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio" Click="ChartType_Click"></RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                        <WindowsFormsHost Height="550"   Name="StatisticServicesCount">
+                            <charts:Chart x:Name="ChartPopularServices">
+                                <charts:Chart.Legends>
+                                    <charts:Legend>
+
+                                    </charts:Legend>
+                                </charts:Chart.Legends>
+                            </charts:Chart>
+                        </WindowsFormsHost>
+                        <Button Name="btnPrint1" Margin="0 10" Style="{StaticResource BtnActions}"  Background="#5EBD79" Click="btnPrint1_Click">Печать </Button>
+                    </StackPanel>
+
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Style="{StaticResource TabItems}">
+                <TabItem.Header>Посещения клиентов</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Выбор типа диаграмм:" Foreground="#fff" Width="200" Margin="0 10 0 5" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton  x:Name="ColumnRadio1" Content="Колонны" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio1" IsChecked="True" Click="ChartType1_Click"  ></RadioButton>
+                                <RadioButton  x:Name="BarRadio1" Content="Гистограмма" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio1" Click="ChartType1_Click" ></RadioButton>
+                                <RadioButton  x:Name="PieRadio1" Content="Круговая" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio1" Click="ChartType1_Click" ></RadioButton>
+                                <RadioButton  x:Name="LineRadio1" Content="Линии" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio1" Click="ChartType1_Click" ></RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                        <WindowsFormsHost Height="550"   Name="StatisticClientsCount">
+                            <charts:Chart x:Name="ChartPopularClient">
+                               
+                                <charts:Chart.Legends>
+                                    <charts:Legend>
+
+                                    </charts:Legend>
+                                </charts:Chart.Legends>
+                                
+                            </charts:Chart>
+                        </WindowsFormsHost>
+                        <Button Name="btnPrint2" Margin="0 10" Style="{StaticResource BtnActions}"  Background="#5EBD79" Click="btnPrint2_Click">Печать</Button>
+                    </StackPanel>
+
+                </TabItem.Content>
+            </TabItem>
+                     
+            <TabItem Style="{StaticResource TabItems}">
+                <TabItem.Header>Доход с клиентов</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Выбор типа диаграмм:" Foreground="#fff" Width="200" Margin="0 10 0 5" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton  x:Name="ColumnRadio2" Content="Колонны" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio2" IsChecked="True" Click="ChartType2_Click"  ></RadioButton>
+                                <RadioButton  x:Name="BarRadio2" Content="Гистограмма" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio2" Click="ChartType2_Click" ></RadioButton>
+                                <RadioButton  x:Name="PieRadio2" Content="Круговая" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio2" Click="ChartType2_Click" ></RadioButton>
+                                <RadioButton  x:Name="LineRadio2" Content="Линии" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio2" Click="ChartType2_Click" ></RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                        <WindowsFormsHost Height="550"   Name="StatisticClients">
+                            <charts:Chart x:Name="ChartIncomeClient">
+                                <charts:Chart.Legends>
+                                    <charts:Legend>
+
+                                    </charts:Legend>
+                                </charts:Chart.Legends>
+                            </charts:Chart>
+                        </WindowsFormsHost>
+                        <Button Name="btnPrint3" Margin="0 10" Style="{StaticResource BtnActions}"  Background="#5EBD79" Click="btnPrint3_Click" >Печать</Button>
+                    </StackPanel>
+
+                </TabItem.Content>
+            </TabItem>
+
+
+            <TabItem Style="{StaticResource TabItems}">
+                <TabItem.Header>Доход мастеров</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel >
+                        <StackPanel>
+                            <TextBlock Text="Выбор типа диаграмм:" Foreground="#fff" Width="200" Margin="0 10 0 5" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton  x:Name="ColumnRadio3" Content="Колонны" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio3" IsChecked="True" Click="ChartType3_Click"  ></RadioButton>
+                                <RadioButton  x:Name="BarRadio3" Content="Гистограмма" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio3" Click="ChartType3_Click" ></RadioButton>
+                                <RadioButton  x:Name="PieRadio3" Content="Круговая" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio3" Click="ChartType3_Click" ></RadioButton>
+                                <RadioButton  x:Name="LineRadio3" Content="Линии" Foreground="#fff" Margin="0 0 25 0" GroupName="ChartGroupRadio3" Click="ChartType3_Click" ></RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                        <WindowsFormsHost Height="550"   Name="StatisticMasters">
+                            <charts:Chart x:Name="ChartIncomeMasters">
+                                <charts:Chart.Legends>
+                                    <charts:Legend>
+
+                                    </charts:Legend>
+                                </charts:Chart.Legends>
+                            </charts:Chart>
+                        </WindowsFormsHost>
+                        <Button Name="btnPrint4" Margin="0 10" Style="{StaticResource BtnActions}"  Background="#5EBD79" Click="btnPrint4_Click" >Печать</Button>
+                    </StackPanel>
+
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        
+        
+        
+        
+    </Grid>
+</Page>

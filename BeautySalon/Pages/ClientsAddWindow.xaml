@@ -1,0 +1,45 @@
+﻿<Window x:Class="BeautySalon.ClientsAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        Title="Добавление клиентов - Azalea"  Height="700"  Width="1000"
+        ResizeMode="NoResize">
+    <Grid  Background="#C2F2D0"  >
+      
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="430"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" Text="Введите данные нового клиента" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockAdd}" FontSize="30"/>
+
+        <TextBlock Grid.Row="2" Style="{StaticResource TextBlockAdd}"   Text="ФИО: "  Margin="20 50 40 0" />
+        <TextBox  Grid.Row="2" Style="{StaticResource TextBoxAdd}" Text="{Binding FullName }" Height="80" Width="290" Margin="60 0 0 10" TextWrapping="Wrap" PreviewTextInput="TextBoxFullname_PreviewTextInput" />
+
+
+        <TextBlock Grid.Column="1"  Grid.Row="1"  Style="{StaticResource TextBlockAdd}" Text="Телефон: " Margin="20 50 40 0" />
+        <TextBox Grid.Column="1"  Grid.Row="1"  Style="{StaticResource TextBoxAdd}" Text="{Binding Phone}"  Height="40" Width="320" Margin="80 0 0 10" MaxLength="11" Name="tbPhone" PreviewTextInput="tbPhone_PreviewTextInput"   />
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBlockAdd}" Text="Адрес: "  Margin="20 50 40 0" />
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBoxAdd}" Text="{Binding Address}"  Height="40" Width="320" Margin="80 0 0 10"   />
+
+
+        <TextBlock Grid.Row="3" Grid.Column="1"  Style="{StaticResource TextBlockAdd}" Text="Почта: " Margin="20 50 40 0" />
+        <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxAdd}" Text="{Binding Email}" Name="tbEmail" Height="40" Width="320"  Margin="80 0 0 10" />
+
+        <Button Grid.Row="4" Style="{StaticResource BtnActions}" Content="Назад" Background="#5EBD79" Width="250" HorizontalAlignment="Left" Margin="20 40 0 0" Name="btnBackClients" Click="btnBackClients_Click" />
+        <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource BtnActions}"  Content="Добавить" Background="#387048" Width="250" Margin="123 40 0 0" Name="btnClientsAdd"  Click="btnClientsAdd_Click"/>
+           
+    </Grid>
+</Window>
